@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coordinator Dashboard</title>
+    <link rel="stylesheet" href="./coordinator-dashboard.css">
+    <script src="./coordinator-dashboard.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+<body>
+    <div class="dashboard-container">
+        <h1>Placement Coordinator Dashboard</h1>
+        
+        <!-- Student Section -->
+        <h2>Students</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th id="student-id-header">Student ID</th>
+                    <th id="name-header">Name</th>
+                    <th id="cgpa-header">CGPA</th>
+                    <th id="year-header">Year</th>
+                    <th id="email-header">Email</th>
+                    <th id="placement-id-header">Placement ID</th>
+                    <th>Delete</th>
+                </tr>
+            </thead>
+            <tbody id="student-data"></tbody>
+        </table>
+        <button><a href="/form.html" target="_blank" style="text-decoration:none;">Add Student</a></button>
+
+        <!-- Opportunities Section -->
+        <h2>Manage Opportunities</h2>
+        <form id="opportunity-form">
+            <input type="text" id="title" placeholder="Title" required>
+            <input type="text" id="company" placeholder="Company" required>
+            <textarea id="description" placeholder="Description" required></textarea>
+            <input type="date" id="deadline" required>
+            <button type="submit">Add Opportunity</button>
+        </form>
+        <table>
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Company</th>
+                    <th>Description</th>
+                    <th>Deadline</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody id="opportunity-data"></tbody>
+        </table>
+    </div>
+</body>
+</html>

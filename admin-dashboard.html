@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="admin-dashboard.css">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="admin-dashboard.js" defer></script>
+</head>
+<body>
+    <div class="dashboard-container">
+        <h1>Admin Dashboard</h1>
+        <h2>Manage Placement Coordinators</h2>
+
+        <!-- Form to create a new coordinator -->
+        <div class="form-container">
+            <h3>Create Placement Coordinator</h3>
+            <form id="create-coordinator-form">
+                <input type="text" id="username" placeholder="Username" required>
+                <input type="password" id="password" placeholder="Password" required>
+                <button type="submit">Create Coordinator</button>
+            </form>
+        </div>
+
+        <!-- List of coordinators -->
+        <div class="coordinators-list">
+            <h3>Existing Coordinators</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Username</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="coordinators-table">
+                    <!-- Coordinator rows will be populated here -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>

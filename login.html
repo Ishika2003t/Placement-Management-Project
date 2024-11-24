@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="./login.css">
+    <script src="login.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+<body>
+    <div class="login-container">
+        <h1>Login</h1>
+        <form id="login-form">
+            <label for="role">Role:</label>
+            <select id="role" required>
+                <option value="student">Student</option>
+                <option value="admin">Admin</option>
+                <option value="coordinator">Placement Coordinator</option>
+            </select>
+            <label for="username">Username:</label>
+            <input type="text" id="username" required>
+            <label for="password">Password:</label>
+            <input type="password" id="password" required>
+            <button type="submit">Login</button>
+        </form>
+        <p id="error-message" style="color: red; display: none;">Invalid credentials. Please try again.</p>
+
+        <!-- Temporary development info -->
+        <div class="dev-info">
+            <h3>Development Info:</h3>
+            <p><strong>Student:</strong> Username: <code>alice123</code>, Password: <code>password123</code></p>
+            <p><strong>Coordinator:</strong> Username: <code>john123</code>, Password: <code>pass123</code></p>
+            <p><strong>Admin:</strong> Username: <code>admin1</code>, Password: <code>admin123</code></p>
+            <p style="color: red;">⚠️ Remove this section before deploying to production.</p>
+        </div>
+    </div>
+</body>
+</html>

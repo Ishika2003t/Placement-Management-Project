@@ -1,0 +1,145 @@
+/* Overall page styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+/* Dashboard container */
+.dashboard-container {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    background: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+}
+
+/* Header styles */
+h1, h2 {
+    text-align: center;
+    color: #333;
+}
+
+h1 {
+    margin-bottom: 20px;
+}
+
+h2 {
+    margin-top: 20px;
+}
+
+/* Table styles for opportunities */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+}
+
+th, td {
+    text-align: left;
+    padding: 10px;
+}
+
+th {
+    background-color: #4caf50;
+    color: white;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+tr:hover {
+    background-color: #e8f5e9;
+}
+
+/* Password change form container */
+.password-change-container {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+}
+
+.password-change-container h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.password-change-container form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.password-change-container label {
+    margin: 10px 0 5px;
+    font-weight: bold;
+    color: #555;
+}
+
+.password-change-container input {
+    width: 80%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.password-change-container input:focus {
+    border-color: #4caf50;
+    outline: none;
+}
+
+.password-change-container button {
+    width: 50%;
+    padding: 12px;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.password-change-container button:hover {
+    background-color: #45a049;
+}
+
+.password-change-container p {
+    margin-top: 10px;
+    font-size: 14px;
+    text-align: center;
+}
+
+/* Error message styling */
+#password-change-message {
+    color: red;
+    font-size: 14px;
+    text-align: center;
+    display: none;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .dashboard-container {
+        width: 90%;
+    }
+
+    .password-change-container form {
+        width: 100%;
+    }
+
+    .password-change-container input, .password-change-container button {
+        width: 100%;
+    }
+}

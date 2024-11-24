@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add New Student</title>
+    <link rel="stylesheet" href="form.css">
+</head>
+<body>
+    <h2>Add New Student</h2>
+    <form id="studentForm">
+        <label for="studentID">Student ID:</label>
+        <input type="number" id="studentID" name="studentID" required><br><br>
+
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required><br><br>
+
+        <label for="cgpa">CGPA:</label>
+        <input type="number" id="cgpa" name="cgpa" step="0.01" required><br><br>
+
+        <label for="year">Year:</label>
+        <input type="number" id="year" name="year" required><br><br>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required><br><br>
+
+        <label for="placementID">Placement ID:</label>
+        <input type="number" id="placementID" name="placementID" required><br><br>
+
+        <!-- New username and password fields -->
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required><br><br>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required><br><br>
+
+        <input type="submit" value="Submit">
+    </form>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script>
+        const form = document.getElementById('studentForm');
+
+        form.addEventListener('submit', async (event) => {
+            event.preventDefault();
+
+            const formData = new FormData(form);
+            const jsonData = {};
+            formData.forEach((value, key) => {
+                jsonData[key] = value;
+            });
+
+            try {
+                const response = await axios.post('http://localhost:3000/students', jsonData);
+                alert(response.data.message);
+                form.reset();
+            } catch (error) {
+                console.error('Error adding new student:', error);
+                alert('An error occurred while adding the student. Please try again later.');
+            }
+        });
+
+        function validateSession() {
+            const user = JSON.parse(localStorage.getItem('loggedInUser'));
+            if (!user || user.role !== 'coordinator' || Date.now() - user.timestamp > 3600000) {
+                alert('Your session has expired. Please log in again.');
+                window.location.href = '/login.html';
+            }
+        }
+
+        if (window.location.pathname !== '/login.html') {
+            validateSession();
+        }
+    </script>
+</body>
+</html>
